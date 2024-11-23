@@ -41,11 +41,11 @@
         <script src="data/DANAU_2.js"></script>
         <script src="data/SUNGAI_3.js"></script>
         <script src="data/JARINGANJALAN_4.js"></script>
-        <script src="data/DATABASE_PKH_5.js"></script>
+        <script src="data/DATABASESKRIPSIREVISIBARU_5.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-5.30649621283205,105.71433032148728],[-5.282163523946866,105.76225936590546]]);
+        }).fitBounds([[-5.311714984584804,105.71328532764674],[-5.287382501186745,105.76474122627663]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -415,7 +415,7 @@
         });
         bounds_group.addLayer(layer_JARINGANJALAN_4);
         map.addLayer(layer_JARINGANJALAN_4);
-        function pop_DATABASE_PKH_5(feature, layer) {
+        function pop_DATABASESKRIPSIREVISIBARU_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">NAMA</th>\
@@ -439,27 +439,23 @@
                     </tr>\
                     <tr>\
                         <th scope="row">LINTANG</th>\
-                        <td class="visible-with-data" id="PENDIDIKAN">' + (feature.properties['PENDIDIKAN'] !== null ? autolinker.link(feature.properties['PENDIDIKAN'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="LINTANG">' + (feature.properties['LINTANG'] !== null ? autolinker.link(feature.properties['LINTANG'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">BUJUR</th>\
-                        <td class="visible-with-data" id="PEKERJAAN">' + (feature.properties['PEKERJAAN'] !== null ? autolinker.link(feature.properties['PEKERJAAN'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="BUJUR">' + (feature.properties['BUJUR'] !== null ? autolinker.link(feature.properties['BUJUR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">PENDAPATAN</th>\
                         <td class="visible-with-data" id="PENDAPATAN">' + (feature.properties['PENDAPATAN'] !== null ? autolinker.link(feature.properties['PENDAPATAN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">JUMLAH KOMPONEN</th>\
-                        <td class="visible-with-data" id="TANGGUNGAN">' + (feature.properties['TANGGUNGAN'] !== null ? autolinker.link(feature.properties['TANGGUNGAN'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <th scope="row">ASPEK_PKH</th>\
                         <td class="visible-with-data" id="ASPEK_PKH">' + (feature.properties['ASPEK_PKH'] !== null ? autolinker.link(feature.properties['ASPEK_PKH'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">NOMINAL PKH</th>\
-                        <td class="visible-with-data" id="BPJS">' + (feature.properties['BPJS'] !== null ? autolinker.link(feature.properties['BPJS'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">DANA_PKH</th>\
+                        <td class="visible-with-data" id="DANA_PKH">' + (feature.properties['DANA_PKH'] !== null ? autolinker.link(feature.properties['DANA_PKH'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">PIP</th>\
@@ -471,22 +467,23 @@
                     </tr>\
                     <tr>\
                         <th scope="row">TANGGUNGAN</th>\
-                        <td class="visible-with-data" id="TANGGUNG_1">' + (feature.properties['TANGGUNG_1'] !== null ? autolinker.link(feature.properties['TANGGUNG_1'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="TANGGUNGAN">' + (feature.properties['TANGGUNGAN'] !== null ? autolinker.link(feature.properties['TANGGUNGAN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">PENDIDIKAN</th>\
-                        <td class="visible-with-data" id="PENDIDIK_1">' + (feature.properties['PENDIDIK_1'] !== null ? autolinker.link(feature.properties['PENDIDIK_1'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="PENDIDIKAN">' + (feature.properties['PENDIDIKAN'] !== null ? autolinker.link(feature.properties['PENDIDIKAN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">PEKERJAAN</th>\
-                        <td class="visible-with-data" id="PEKERJAA_1">' + (feature.properties['PEKERJAA_1'] !== null ? autolinker.link(feature.properties['PEKERJAA_1'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="PEKERJAAN">' + (feature.properties['PEKERJAAN'] !== null ? autolinker.link(feature.properties['PEKERJAAN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">BPJS</th>\
-                        <td class="visible-with-data" id="BPJS_1">' + (feature.properties['BPJS_1'] !== null ? autolinker.link(feature.properties['BPJS_1'].toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="BPJS">' + (feature.properties['BPJS'] !== null ? autolinker.link(feature.properties['BPJS'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>FOTO RUMAH</strong><br />' + (feature.properties['FOTO'] !== null ? '<img src="images/' + String(feature.properties['FOTO']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
+                        <th scope="row">FOTO_RUMAH</th>\
+                        <td class="visible-with-data" id="FOTO_RUMAH">' + (feature.properties['FOTO_RUMAH'] !== null ? '<img src="images/' + String(feature.properties['FOTO_RUMAH']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -496,10 +493,10 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_DATABASE_PKH_5_0() {
+        function style_DATABASESKRIPSIREVISIBARU_5_0() {
             return {
-                pane: 'pane_DATABASE_PKH_5',
-                radius: 6.0,
+                pane: 'pane_DATABASESKRIPSIREVISIBARU_5',
+                radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -508,30 +505,30 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(248,248,248,1.0)',
+                fillColor: 'rgba(190,207,80,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_DATABASE_PKH_5');
-        map.getPane('pane_DATABASE_PKH_5').style.zIndex = 405;
-        map.getPane('pane_DATABASE_PKH_5').style['mix-blend-mode'] = 'normal';
-        var layer_DATABASE_PKH_5 = new L.geoJson(json_DATABASE_PKH_5, {
+        map.createPane('pane_DATABASESKRIPSIREVISIBARU_5');
+        map.getPane('pane_DATABASESKRIPSIREVISIBARU_5').style.zIndex = 405;
+        map.getPane('pane_DATABASESKRIPSIREVISIBARU_5').style['mix-blend-mode'] = 'normal';
+        var layer_DATABASESKRIPSIREVISIBARU_5 = new L.geoJson(json_DATABASESKRIPSIREVISIBARU_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_DATABASE_PKH_5',
-            layerName: 'layer_DATABASE_PKH_5',
-            pane: 'pane_DATABASE_PKH_5',
-            onEachFeature: pop_DATABASE_PKH_5,
+            dataVar: 'json_DATABASESKRIPSIREVISIBARU_5',
+            layerName: 'layer_DATABASESKRIPSIREVISIBARU_5',
+            pane: 'pane_DATABASESKRIPSIREVISIBARU_5',
+            onEachFeature: pop_DATABASESKRIPSIREVISIBARU_5,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_DATABASE_PKH_5_0(feature));
+                return L.circleMarker(latlng, style_DATABASESKRIPSIREVISIBARU_5_0(feature));
             },
         });
-        bounds_group.addLayer(layer_DATABASE_PKH_5);
-        map.addLayer(layer_DATABASE_PKH_5);
+        bounds_group.addLayer(layer_DATABASESKRIPSIREVISIBARU_5);
+        map.addLayer(layer_DATABASESKRIPSIREVISIBARU_5);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -543,7 +540,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
-            {label: '<img src="legend/DATABASE_PKH_5.png" /> DATABASE_PKH', layer: layer_DATABASE_PKH_5},
+            {label: '<img src="legend/DATABASESKRIPSIREVISIBARU_5.png" /> DATABASESKRIPSIREVISIBARU', layer: layer_DATABASESKRIPSIREVISIBARU_5},
             {label: '<img src="legend/JARINGANJALAN_4.png" /> JARINGAN JALAN', layer: layer_JARINGANJALAN_4},
             {label: '<img src="legend/SUNGAI_3.png" /> SUNGAI', layer: layer_SUNGAI_3},
             {label: '<img src="legend/DANAU_2.png" /> DANAU', layer: layer_DANAU_2},
